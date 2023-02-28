@@ -1,10 +1,9 @@
 #!/bin/bash
-#SBATCH -J download        # Job name
-#SBATCH -o download.out # Output file name
+#SBATCH -J captions        # Job name
+#SBATCH -o captions.out # Output file name
 #SBATCH --time=4:00:00                 # Time limit
-#SBATCH -n 10                      # Number of cores
-#SBATCH --mem=64G
-#SBATCH -G 1
+#SBATCH --exclusive
+#SBATCH -G 8
 
 
 # Load TensorFlow env
@@ -17,4 +16,4 @@ echo $CUDA_HOME
 source ~/.venv/tensorflow/bin/activate
 
 # Run Python script
-python3 downloading_files.py
+python3 main.py
