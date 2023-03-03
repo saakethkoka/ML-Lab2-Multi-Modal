@@ -16,4 +16,4 @@ echo $CUDA_HOME
 source ~/.venv/tensorflow/bin/activate
 
 # Run Python script
-python3 main.py
+python3 flicker.py
