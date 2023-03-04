@@ -1,9 +1,10 @@
 #!/bin/bash
-#SBATCH -J captions        # Job name
-#SBATCH -o captions.out # Output file name
-#SBATCH --time=4:00:00                 # Time limit
-#SBATCH --exclusive
-#SBATCH -G 8
+#SBATCH -J captions2        # Job name
+#SBATCH -o captions2.out    # Output file name
+#SBATCH --time=4:00:00     # Time limit
+#SBATCH -c 10              # Number of cores
+#SBATCH --mem=64G          # Memory limit
+#SBATCH -G 1
 
 
 # Load TensorFlow env
@@ -16,4 +17,4 @@ echo $CUDA_HOME
 source ~/.venv/tensorflow/bin/activate
 
 # Run Python script
-python3 flicker.py
+python3 flickr.py
